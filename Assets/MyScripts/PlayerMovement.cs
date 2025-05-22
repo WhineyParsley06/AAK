@@ -1,7 +1,6 @@
 using UnityEngine;
-using System.Collections;
-using UnityEngine.UI; // Necesario para usar UI
-using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool Horse_Should_Move = true;
     public DoorController doorController; // Arrástralo desde el Inspector
+
+    public GameObject suelo;
 
     void Start()
     {
@@ -38,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             ApplyJump();
+        }
+        if (transform.position.y < -5f) // puedes ajustar el valor si tu escena es más alta o más baja
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 
@@ -94,6 +99,18 @@ public class PlayerMovement : MonoBehaviour
             if (doorController != null)
             {
                 doorController.OpenDoor();
+            }
+        }
+
+        if (other.gameObject.CompareTag("YellowColor")) // o cualquier tag que le pongas al trigger
+        {
+            if (suelo != null)
+            {
+                MeshRenderer renderer = suelo.GetComponent<MeshRenderer>();
+                if (renderer != null)
+                {
+                    renderer.material.color = Color.yellow; // el color que desees
+                }
             }
         }
     }
