@@ -90,10 +90,10 @@ public class PlayerMovement : MonoBehaviour
             Horse_Should_Move = false;
             Vector3 currentPosition = other.transform.position;
             other.transform.position = new Vector3(currentPosition.x, -0.30f, currentPosition.z);
-            DoorController door = GameObject.Find("Door").GetComponent<DoorController>();
+            //DoorController door = GameObject.Find("Door").GetComponent<DoorController>();
             if (doorController != null)
             {
-                //doorController.OpenDoor();
+                doorController.OpenDoor();
             }
         }
     }
@@ -105,6 +105,10 @@ public class PlayerMovement : MonoBehaviour
             Horse_Should_Move = true;
             Vector3 currentPosition = other.transform.position;
             other.transform.position = new Vector3(currentPosition.x, 0.36f, currentPosition.z); // vuelve a subir
+            if (doorController != null)
+            {
+                doorController.CloseDoor();
+            }
         }
     }
 

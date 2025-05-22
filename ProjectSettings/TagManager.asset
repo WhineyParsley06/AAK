@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - BotonSuelo
+  - Door
   layers:
   - Default
   - TransparentFX

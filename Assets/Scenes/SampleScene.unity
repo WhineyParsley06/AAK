@@ -1042,7 +1042,7 @@ MonoBehaviour:
   jumpForce: 7
   playerRigidbody: {fileID: 0}
   Horse_Should_Move: 1
-  doorController: {fileID: 0}
+  doorController: {fileID: 1104294501}
 --- !u!1 &734596411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1297,7 @@ GameObject:
   - component: {fileID: 1104294498}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1311,7 +1311,7 @@ Transform:
   m_GameObject: {fileID: 1104294496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.56, y: 1.4638, z: 0}
+  m_LocalPosition: {x: 1.13, y: 1.4638, z: 0}
   m_LocalScale: {x: 5.2334914, y: 3.9276564, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  distanceToMove: 3
+  distanceToMove: 4.5
 --- !u!1 &1133686471
 GameObject:
   m_ObjectHideFlags: 0

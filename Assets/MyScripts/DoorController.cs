@@ -3,33 +3,50 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     public float moveSpeed = 2f;
-    public float distanceToMove = 4.5f; // se moverá 7 unidades a la izquierda
+    public float distanceToMove = 4.5f;
+
     private bool shouldOpen = false;
+    private bool shouldClose = false;
+
     private Vector3 targetPosition;
+    private Vector3 originalPosition;
+
     private bool initialized = false;
 
     void Start()
     {
-        // Llama automáticamente al iniciar para probar el movimiento
-        OpenDoor();
+        originalPosition = transform.position;
+
+        // Solo para prueba, abre al iniciar
+        //OpenDoor();
     }
 
     public void OpenDoor()
     {
-        if (!initialized)
-        {
-            targetPosition = transform.position + Vector3.left * distanceToMove;
-            initialized = true;
-        }
-
+        targetPosition = originalPosition + Vector3.left * distanceToMove;
         shouldOpen = true;
+        shouldClose = false;
+    }
+
+    public void CloseDoor()
+    {
+        targetPosition = originalPosition;
+        shouldClose = true;
+        shouldOpen = false;
     }
 
     void Update()
     {
-        if (shouldOpen)
+        if (shouldOpen || shouldClose)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+            // Cuando llega a destino, detener movimiento
+            if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
+            {
+                shouldOpen = false;
+                shouldClose = false;
+            }
         }
     }
 }
