@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float rotationSpeed = 10f;
     public float jumpForce = 7f;
-    bool isGrounded;
+    bool isGrounded = true;
     private Vector3 moveDirection;
     [SerializeField] private Rigidbody playerRigidbody;
     void Start()
@@ -58,5 +58,22 @@ public class PlayerMovement : MonoBehaviour
     void ApplyJump()
     {
         playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            isGrounded = true;
+        }
+    }
+    private void OnCollisionExit(Collision other)
+    {
+
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            isGrounded = false;
+        }
+
     }
 }
