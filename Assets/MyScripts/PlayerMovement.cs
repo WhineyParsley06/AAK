@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody playerRigidbody;
 
     public bool Horse_Should_Move = true;
+    public DoorController doorController; // Arrástralo desde el Inspector
+
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -88,6 +90,11 @@ public class PlayerMovement : MonoBehaviour
             Horse_Should_Move = false;
             Vector3 currentPosition = other.transform.position;
             other.transform.position = new Vector3(currentPosition.x, -0.30f, currentPosition.z);
+            DoorController door = GameObject.Find("Door").GetComponent<DoorController>();
+            if (doorController != null)
+            {
+                //doorController.OpenDoor();
+            }
         }
     }
 
