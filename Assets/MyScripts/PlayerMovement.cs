@@ -122,6 +122,18 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+        
+        if (other.gameObject.CompareTag("RedColor")) // o cualquier tag que le pongas al trigger
+        {
+            if (suelo != null)
+            {
+                MeshRenderer renderer = suelo.GetComponent<MeshRenderer>();
+                if (renderer != null)
+                {
+                    renderer.material.color = Color.red; // el color que desees
+                }
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -137,6 +149,17 @@ public class PlayerMovement : MonoBehaviour
             }
         }
          if (other.gameObject.CompareTag("YellowColor"))
+         {
+                if (suelo != null)
+                {
+                    MeshRenderer renderer = suelo.GetComponent<MeshRenderer>();
+                    if (renderer != null)
+                    {
+                        renderer.material.color = originalColor;
+                    }
+                }
+            }
+            if (other.gameObject.CompareTag("RedColor"))
             {
                 if (suelo != null)
                 {
@@ -147,8 +170,11 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
-    }
+            }
+
+ }
+        
 
     
 
-}
+

@@ -11,7 +11,7 @@ public class DoorController : MonoBehaviour
     private Vector3 targetPosition;
     private Vector3 originalPosition;
 
-    private bool initialized = false;
+    
 
     void Start()
     {
