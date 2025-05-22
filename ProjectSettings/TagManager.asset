@@ -8,6 +8,7 @@ TagManager:
   - BotonSuelo
   - Door
   - YellowColor
+  - RedColor
   layers:
   - Default
   - TransparentFX

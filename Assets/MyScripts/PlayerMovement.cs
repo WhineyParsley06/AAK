@@ -15,12 +15,21 @@ public class PlayerMovement : MonoBehaviour
 
     public bool Horse_Should_Move = true;
     public DoorController doorController; // Arrástralo desde el Inspector
-
+    private Color originalColor;
     public GameObject suelo;
 
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
+
+        if (suelo != null)
+        {
+            MeshRenderer renderer = suelo.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                originalColor = renderer.material.color;
+            }
+        }
     }
 
     void Update()
@@ -127,6 +136,19 @@ public class PlayerMovement : MonoBehaviour
                 doorController.CloseDoor();
             }
         }
+         if (other.gameObject.CompareTag("YellowColor"))
+            {
+                if (suelo != null)
+                {
+                    MeshRenderer renderer = suelo.GetComponent<MeshRenderer>();
+                    if (renderer != null)
+                    {
+                        renderer.material.color = originalColor;
+                    }
+                }
+            }
     }
+
+    
 
 }
