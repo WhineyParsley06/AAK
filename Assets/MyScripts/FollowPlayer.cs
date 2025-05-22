@@ -20,4 +20,6 @@ public class FollowPlayer : MonoBehaviour
         transform.position = player.transform.position + new Vector3(x, y, z);
         transform.LookAt(player.transform);
     }
+
+
 }

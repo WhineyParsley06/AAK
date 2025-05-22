@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 728340979}
   - component: {fileID: 728340978}
   - component: {fileID: 728340977}
+  - component: {fileID: 728340981}
   - component: {fileID: 728340976}
   - component: {fileID: 728340980}
   m_Layer: 0
@@ -638,6 +639,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &728340981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728340975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5427384981d79524daec33d6ff8a291c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rotationSpeed: 10
+  jumpForce: 7
+  playerRigidbody: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
