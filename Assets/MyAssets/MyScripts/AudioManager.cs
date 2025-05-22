@@ -54,7 +54,7 @@ public class AudioManager : MonoBehaviour
 
     public void MusicVolumeControl(float volume)
     {
-        Master.SetFloat("Musica", volume);
+        Master.SetFloat("MusicVol", volume);
     }
 
     
