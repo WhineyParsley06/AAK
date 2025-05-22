@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded = true;
     private Vector3 moveDirection;
     [SerializeField] private Rigidbody playerRigidbody;
+
+    public bool Horse_Should_Move = true;
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
@@ -66,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
+
+      
     }
     private void OnCollisionExit(Collision other)
     {
@@ -76,4 +80,25 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("BotonSuelo"))
+        {
+            Debug.Log("Boton Suelo Activado por Trigger");
+            Horse_Should_Move = false;
+            Vector3 currentPosition = other.transform.position;
+            other.transform.position = new Vector3(currentPosition.x, -0.30f, currentPosition.z);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("BotonSuelo"))
+        {
+            Horse_Should_Move = true;
+            Vector3 currentPosition = other.transform.position;
+            other.transform.position = new Vector3(currentPosition.x, 0.36f, currentPosition.z); // vuelve a subir
+        }
+    }
+
 }

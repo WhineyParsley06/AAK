@@ -5,8 +5,21 @@ public class Horse_Script : MonoBehaviour
     public float moveSpeed = 2f;
     public int turnStep = 0; // 0→1→2→3→0 (gira en cada esquina)
 
+    private PlayerMovement player;
+
+    void Start()
+    {
+        GameObject playerObj = GameObject.FindWithTag("Player"); // asegúrate de que el cubo tenga el tag "Player"
+        if (playerObj != null)
+        {
+            player = playerObj.GetComponent<PlayerMovement>();
+        }
+    }
+
     void Update()
     {
+
+        if (player == null || !player.Horse_Should_Move) return;
         // Siempre avanza hacia su cabeza
         transform.position += transform.right * moveSpeed * Time.deltaTime;
 
