@@ -79,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
     void ApplyJump()
     {
+        // Reproduce el sonido del salto
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.JumpSound);
         playerRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
     private void OnCollisionEnter(Collision other)
@@ -105,6 +107,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("BotonSuelo"))
         {
+            //Reproduce el sonido del botón
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.ButtonPressedCLip);
             Debug.Log("Boton Suelo Activado por Trigger");
             Horse_Should_Move = false;
             Vector3 currentPosition = other.transform.position;

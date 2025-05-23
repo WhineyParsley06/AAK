@@ -47,10 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicAudio: {fileID: 110406878980554228}
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 5405881698284513384}
   Master: {fileID: 24100000, guid: 249a0314b2ffb2a48bc2e3804da410c5, type: 2}
   GeneralMusic: {fileID: 8300000, guid: 6fb7ad5079d760145b6afd6894379392, type: 3}
   SoundEfectButtons: {fileID: 8300000, guid: b48a58a1e8114364386263c483f407f4, type: 3}
+  ButtonPressedCLip: {fileID: 0}
 --- !u!1 &3169173554737794416
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +93,7 @@ AudioSource:
   m_GameObject: {fileID: 3169173554737794416}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 249a0314b2ffb2a48bc2e3804da410c5, type: 2}
+  OutputAudioMixerGroup: {fileID: -7536052098414011556, guid: 249a0314b2ffb2a48bc2e3804da410c5, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -221,7 +222,7 @@ AudioSource:
   m_GameObject: {fileID: 7882209059886698340}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2180738548478298863, guid: 249a0314b2ffb2a48bc2e3804da410c5, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1

@@ -9,8 +9,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource musicAudio, sfxAudio;
     [SerializeField] private AudioMixer Master;
 
-    
-    public AudioClip GeneralMusic, SoundEfectButtons;
+
+    [SerializeField] public AudioClip GeneralMusic, SoundEfectButtons, ButtonPressedCLip, JumpSound;
 
 
 
