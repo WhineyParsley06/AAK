@@ -237,7 +237,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 404870690}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 878347289}
+        m_TargetAssemblyTypeName: Main_Menu_Script, Assembly-CSharp
+        m_MethodName: PlayButtonsound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &404870690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,10 +1339,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 110406878980554228, guid: dec1fae3ff50dc64e8261a79a7302ad8, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -7536052098414011556, guid: 249a0314b2ffb2a48bc2e3804da410c5, type: 2}
     - target: {fileID: 582187320779712903, guid: dec1fae3ff50dc64e8261a79a7302ad8, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5405881698284513384, guid: dec1fae3ff50dc64e8261a79a7302ad8, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -2180738548478298863, guid: 249a0314b2ffb2a48bc2e3804da410c5, type: 2}
     - target: {fileID: 6479957127389275679, guid: dec1fae3ff50dc64e8261a79a7302ad8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1430.1335

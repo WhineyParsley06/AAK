@@ -6,11 +6,11 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
-    [SerializeField] private AudioSource musicAudio;
+    [SerializeField] private AudioSource musicAudio, sfxAudio;
     [SerializeField] private AudioMixer Master;
 
     
-    public AudioClip GeneralMusic;
+    public AudioClip GeneralMusic, SoundEfectButtons;
 
 
 
@@ -34,11 +34,15 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         musicAudio = transform.GetChild(0).GetComponent<AudioSource>();
-       
+        sfxAudio = transform.GetChild(1).GetComponent<AudioSource>();
+
 
     }
 
-
+    public void PlaySFX(AudioClip clip)
+    {
+        sfxAudio.PlayOneShot(clip);
+    }
 
     public void PlayMusic(AudioClip clip)
     {
