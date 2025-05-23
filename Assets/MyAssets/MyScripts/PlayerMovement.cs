@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float rotationSpeed = 10f;
     public float jumpForce = 7f;
-    bool isGrounded = true;
+    private bool isGrounded;
     private Vector3 moveDirection;
     [SerializeField] private Rigidbody playerRigidbody;
 
@@ -17,6 +17,9 @@ public class PlayerMovement : MonoBehaviour
     public DoorController doorController; // Arrástralo desde el Inspector
     private Color originalColor;
     public GameObject suelo;
+
+    private int jumpCount = 0;
+    public int maxJumps = 2;
 
     void Start()
     {
@@ -45,9 +48,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Saltar si se presiona la tecla y está en el suelo
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && jumpCount < maxJumps)
         {
             ApplyJump();
+            jumpCount++;
         }
         if (transform.position.y < -5f) // puedes ajustar el valor si tu escena es más alta o más baja
         {
@@ -83,9 +87,10 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Floor"))
         {
             isGrounded = true;
+            jumpCount = 0; // reinicia el contador de saltos
         }
 
-      
+
     }
     private void OnCollisionExit(Collision other)
     {
