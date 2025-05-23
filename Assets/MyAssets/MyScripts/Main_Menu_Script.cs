@@ -11,13 +11,20 @@ public class Main_Menu_Script : MonoBehaviour
     [SerializeField] public Slider SliderMusic;
     void Start()
     {
-        SliderMusic.onValueChanged.AddListener(UpdateMusicVolume);
+        if (SliderMusic != null)
+        {
+            SliderMusic.onValueChanged.AddListener(UpdateMusicVolume);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 
     public void UpdateMusicVolume(float value)
