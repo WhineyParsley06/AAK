@@ -10,8 +10,9 @@ public class DoorController : MonoBehaviour
 
     private Vector3 targetPosition;
     private Vector3 originalPosition;
+    private bool playerInDoorway = false;
 
-    
+
 
     void Start()
     {
@@ -30,6 +31,12 @@ public class DoorController : MonoBehaviour
 
     public void CloseDoor()
     {
+        if (playerInDoorway)
+        {
+            Debug.Log("Player blocking the door – cannot close.");
+            return;
+        }
+
         targetPosition = originalPosition;
         shouldClose = true;
         shouldOpen = false;
@@ -37,7 +44,7 @@ public class DoorController : MonoBehaviour
 
     void Update()
     {
-        if (shouldOpen || shouldClose)
+        if ((shouldOpen || shouldClose) && !playerInDoorway)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
@@ -47,6 +54,24 @@ public class DoorController : MonoBehaviour
                 shouldOpen = false;
                 shouldClose = false;
             }
+        }
+    }
+
+
+    // Detect player inside the trigger zone
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInDoorway = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInDoorway = false;
         }
     }
 }
