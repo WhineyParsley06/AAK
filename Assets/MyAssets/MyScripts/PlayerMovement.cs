@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Boton Suelo Activado por Trigger");
             Horse_Should_Move = false;
             Vector3 currentPosition = other.transform.position;
-            other.transform.position = new Vector3(currentPosition.x, -0.30f, currentPosition.z);
+            other.transform.position = new Vector3(currentPosition.x, -0.80f, currentPosition.z);
             //DoorController door = GameObject.Find("Door").GetComponent<DoorController>();
             if (doorController != null)
             {
@@ -151,7 +151,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Horse_Should_Move = true;
             Vector3 currentPosition = other.transform.position;
-            other.transform.position = new Vector3(currentPosition.x, 0.36f, currentPosition.z); // vuelve a subir
+            other.transform.position = new Vector3(currentPosition.x, -0.5f, currentPosition.z); // vuelve a subir
             if (doorController != null)
             {
                 doorController.CloseDoor();
