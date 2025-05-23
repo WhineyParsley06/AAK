@@ -25,7 +25,7 @@ public class Main_Menu_Script : MonoBehaviour
 
     public void PlayButtonsound()
     {
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.SoundEfectButtons);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.SoundEfectButtons);
     }
     public void PlayGame()
     {
