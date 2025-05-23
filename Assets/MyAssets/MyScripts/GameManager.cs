@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public bool isPaused = false;
+    public GameObject pauseButton, ResumeButton;
 
     public void Awake()
     {
@@ -19,7 +20,8 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
+        if (pauseButton != null) pauseButton.SetActive(true);
+        if (ResumeButton != null) ResumeButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,15 +31,18 @@ public class GameManager : MonoBehaviour
     }
 
     public void pauseGame()
+    {   
+
+        isPaused = true;
+        Time.timeScale = 0;
+        if (pauseButton != null) pauseButton.SetActive(false);
+        if (ResumeButton != null) ResumeButton.SetActive(true);
+    }
+    public void resumeGame()
     {
-        isPaused = !isPaused;
-        if (isPaused)
-        {
-            Time.timeScale = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        isPaused = false;
+        Time.timeScale = 1;
+        if (pauseButton != null) pauseButton.SetActive(true);
+        if (ResumeButton != null) ResumeButton.SetActive(false);
     }
 }
