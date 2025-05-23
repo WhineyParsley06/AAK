@@ -1587,11 +1587,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 532591105809680800, guid: b95327572f1c35945acf947012b2b44b, type: 3}
 --- !u!4 &716382458 stripped
@@ -2050,11 +2050,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 532591105809680800, guid: b95327572f1c35945acf947012b2b44b, type: 3}
 --- !u!4 &778779277 stripped
@@ -2437,7 +2437,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -2478,7 +2478,7 @@ Transform:
   m_GameObject: {fileID: 1104294496}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00019196926, y: -0.00088874, z: 0.001426298, w: 0.9999986}
-  m_LocalPosition: {x: 1.13, y: 1.4638, z: 0}
+  m_LocalPosition: {x: 1.13, y: 1.4638, z: 0.39}
   m_LocalScale: {x: 5.2334914, y: 3.9276564, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3474,7 +3474,7 @@ Transform:
   m_GameObject: {fileID: 1644057235}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.40096998, y: -0.46, z: 2.73261}
+  m_LocalPosition: {x: -0.40096998, y: -0.68, z: 2.73261}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4246,7 +4246,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5

@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1395,6 +1395,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8912819885022752534, guid: dec1fae3ff50dc64e8261a79a7302ad8, type: 3}
+      propertyPath: JumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a8f4da208472f7846869ad8fb31a70f9, type: 3}
+    - target: {fileID: 8912819885022752534, guid: dec1fae3ff50dc64e8261a79a7302ad8, type: 3}
+      propertyPath: ButtonPressedCLip
+      value: 
+      objectReference: {fileID: 8300000, guid: 88626d5e40a19264eabf078cca494a77, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
